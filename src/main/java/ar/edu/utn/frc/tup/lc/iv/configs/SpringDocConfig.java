@@ -1,4 +1,4 @@
-package ar.edu.utn.frc.tup.lc.iv.config;
+package ar.edu.utn.frc.tup.lc.iv.configs;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.core.jackson.ModelResolver;
