@@ -52,3 +52,7 @@ Es necesario generar la clase de configuración
 [PublisherConfig.java](src/main/java/ar/edu/utn/frc/tup/lc/iv/configs/PublisherConfig.java)
 la cual genera el Java Bean necesario para poder instanciar
 [Publisher.java](src/main/java/ar/edu/utn/frc/tup/lc/iv/rabbitmq/publisher/Publisher.java).
+
+# Fuetes
+
+- https://www.youtube.com/watch?v=IdJ3bS-7cbg&t=786s
