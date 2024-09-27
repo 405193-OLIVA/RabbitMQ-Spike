@@ -1,5 +1,6 @@
 package ar.edu.utn.frc.tup.lc.iv.rabbitmq.publisher;
 
+import ar.edu.utn.frc.tup.lc.iv.dtos.rabbit.RabbitMessage;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -19,7 +20,7 @@ public class Publisher {
     @Autowired
     private Queue queue;
 
-    public void send(String msj){
+    public void send(RabbitMessage msj){
         rabbitTemplate.convertAndSend(queue.getName(), msj);
     }
 }

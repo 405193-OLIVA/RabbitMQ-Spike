@@ -1,5 +1,6 @@
 package ar.edu.utn.frc.tup.lc.iv.controllers;
 
+import ar.edu.utn.frc.tup.lc.iv.dtos.rabbit.RabbitMessage;
 import ar.edu.utn.frc.tup.lc.iv.services.RabbitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +17,8 @@ public class RabbitController {
     private RabbitService rabbitService;
 
     @PostMapping
-    public ResponseEntity<String> sendMsj(@RequestBody String msj){
+    public ResponseEntity<String> sendMsj(@RequestBody RabbitMessage msj){
         rabbitService.SendMsj(msj);
-        return ResponseEntity.ok("");
+        return ResponseEntity.ok("Mensaje Enviado");
     }
 }

@@ -1,5 +1,6 @@
 package ar.edu.utn.frc.tup.lc.iv.rabbitmq.consumer;
 
+import ar.edu.utn.frc.tup.lc.iv.dtos.rabbit.RabbitMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -13,7 +14,7 @@ public class Consumer {
      * Este decorador permite pasar una lista de nombres de colas que el consumidor va a estar escuchando
      */
     @RabbitListener(queues = { "${tpi.queue.name}" })
-    public void receive(@Payload String msj){
+    public void receive(@Payload RabbitMessage msj){
       log.info("Mensaje recibido: {}", msj);
 
       sleep();
