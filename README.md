@@ -49,10 +49,12 @@ que tendrá los métodos necesarios para escuchar y recibir los mensajes de la c
 ## Ejemplo de Publisher
 
 Es necesario generar la clase de configuración
-[PublisherConfig.java](src/main/java/ar/edu/utn/frc/tup/lc/iv/configs/PublisherConfig.java)
+[RabbitMQConfig.java](src/main/java/ar/edu/utn/frc/tup/lc/iv/configs/RabbitMQConfig.java)
 la cual genera el Java Bean necesario para poder instanciar
 [Publisher.java](src/main/java/ar/edu/utn/frc/tup/lc/iv/rabbitmq/publisher/Publisher.java).
 
-# Fuetes
+# Fuentes
 
 - https://www.youtube.com/watch?v=IdJ3bS-7cbg&t=786s
+- https://mstryoda.medium.com/how-to-consume-messages-from-java-applications-with-rabbitmq-in-masstransit-e5c96b6618dd
+- https://stackoverflow.com/questions/77499442/spring-boot-rabbitmq-attempt-to-deserialize-unauthorized-class-exception
