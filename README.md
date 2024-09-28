@@ -5,6 +5,7 @@
 docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management
 ```
 ### Web interface
+
 >http://localhost:15672/
 
 - Loggin username:password -> guest:guest.
@@ -52,6 +53,10 @@ Es necesario generar la clase de configuración
 [RabbitMQConfig.java](src/main/java/ar/edu/utn/frc/tup/lc/iv/configs/RabbitMQConfig.java)
 la cual genera el Java Bean necesario para poder instanciar
 [Publisher.java](src/main/java/ar/edu/utn/frc/tup/lc/iv/rabbitmq/publisher/Publisher.java).
+
+## Swagger
+
+> http://localhost:8080/swagger-ui/index.html
 
 # Fuentes
 
