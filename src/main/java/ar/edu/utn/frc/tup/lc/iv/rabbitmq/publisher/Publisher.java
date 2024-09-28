@@ -27,9 +27,9 @@ public class Publisher {
     @Autowired
     private Queue queue;
 
-    public void send(RabbitMessage rabbitMessage) throws JsonProcessingException {
+    public void send(String header, RabbitMessage rabbitMessage) throws JsonProcessingException {
         Message msj = MessageBuilder.withBody(objectMapper.writeValueAsBytes(rabbitMessage))
-                        .setHeader("source", "owner")
+                        .setHeader("source", header)
                         .setHeader("testH", "testV")
                         .build();
         rabbitTemplate.convertAndSend(queue.getName(), msj);

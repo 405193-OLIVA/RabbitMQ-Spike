@@ -7,5 +7,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface RabbitService {
 
-    void SendMsj(RabbitMessage msj) throws JsonProcessingException;
+    void SendMsj(String source, RabbitMessage msj) throws JsonProcessingException;
 }

@@ -5,10 +5,7 @@ import ar.edu.utn.frc.tup.lc.iv.services.RabbitService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("rabbit")
@@ -18,8 +15,8 @@ public class RabbitController {
     private RabbitService rabbitService;
 
     @PostMapping
-    public ResponseEntity<String> sendMsj(@RequestBody RabbitMessage msj) throws JsonProcessingException {
-        rabbitService.SendMsj(msj);
+    public ResponseEntity<String> sendMsj(@RequestHeader String source, @RequestBody RabbitMessage msj) throws JsonProcessingException {
+        rabbitService.SendMsj(source, msj);
         return ResponseEntity.ok("Mensaje Enviado");
     }
 }

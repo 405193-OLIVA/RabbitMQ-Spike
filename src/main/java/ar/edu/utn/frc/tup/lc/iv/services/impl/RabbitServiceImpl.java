@@ -14,7 +14,7 @@ public class RabbitServiceImpl implements RabbitService {
     private Publisher publisher;
 
     @Override
-    public void SendMsj(RabbitMessage msj) throws JsonProcessingException {
-        publisher.send(msj);
+    public void SendMsj(String source, RabbitMessage msj) throws JsonProcessingException {
+        publisher.send(source, msj);
     }
 }
