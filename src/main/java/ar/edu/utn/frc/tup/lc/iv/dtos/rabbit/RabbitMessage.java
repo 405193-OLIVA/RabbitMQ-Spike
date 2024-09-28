@@ -5,15 +5,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class RabbitMessage<T> implements Serializable {
 
+    /**
+     * Id de entidad que solicita
+     */
     private Long id;
 
     private LocalDateTime dateTime;
 
-    private T data;
+    private List<T> data;
 }

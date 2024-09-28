@@ -35,7 +35,10 @@ public class RabbitMQConfig {
     @Bean
     public SimpleMessageConverter converter() {
         SimpleMessageConverter converter = new SimpleMessageConverter();
-        converter.setAllowedListPatterns(List.of("java.util.LinkedHashMap", "java.util.HashMap", "java.time.Ser",
+        converter.setAllowedListPatterns(List.of("java.util.LinkedHashMap",
+                "java.util.HashMap",
+                "java.time.Ser",
+                "java.util.ArrayList",
                 "ar.edu.utn.frc.tup.lc.iv.dtos.rabbit.RabbitMessage"));
         return converter;
     }
