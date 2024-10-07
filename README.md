@@ -10,13 +10,14 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-ma
 
 - Loggin username:password -> guest:guest.
 
-![Rabbit Interface](/images/Rabbit Interface.png)
+<img alt="Rabbit Interface" src="/images/Rabbit Interface.png"/>
 
 ### Spring Dependencies
 
 Ingresar estas dependencias en [pom.xml](pom.xml)
 
 ``` xml
+<!-- RabbitMQ -->
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-amqp</artifactId>
