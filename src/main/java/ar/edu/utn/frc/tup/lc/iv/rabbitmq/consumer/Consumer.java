@@ -1,6 +1,7 @@
 package ar.edu.utn.frc.tup.lc.iv.rabbitmq.consumer;
 
 import ar.edu.utn.frc.tup.lc.iv.dtos.rabbit.RabbitMessage;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Address;
@@ -25,7 +26,10 @@ public class Consumer {
     @RabbitListener(queues = { "${tpi.queue.name}" })
     public void receive(@Payload Message msj) throws IOException {
       log.info("Mensaje recibido: {}", msj);
-      RabbitMessage<Address> rabbitMessage = objectMapper.readValue(msj.getBody(), RabbitMessage.class);
+      RabbitMessage<Address> rabbitMessage = objectMapper.readValue(
+              msj.getBody(),
+              new TypeReference<RabbitMessage<Address>>() { }
+      );
       log.info("HEADERS: {}", msj.getMessageProperties().getHeaders());
       log.info("DATA: {}", rabbitMessage.toString());
       sleep();
